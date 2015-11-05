@@ -1,0 +1,82 @@
+html {
+  background-color:#ffffff;
+}
+
+* {
+  color: #000080;
+}
+
+a {
+  color:#800080;
+}
+
+a:visited{
+  color:#ff0000;
+}
+li div {
+  font-size: 10px;
+}
+li span {
+  display:block;
+}
+
+.enlarge {
+  font-size:34px;
+}
+
+.enlarge2 {
+  font-size:18px;
+}
+
+header {
+  text-align: center;
+  font-weight:bold;
+}
+
+header div {
+  font-size:13px;
+}
+
+#geico-ad {
+  text-align: center;
+  font-size: 10px;
+}
+
+#comments-concerns {
+  font-size:13px;
+}
+
+#copyright-info {
+  font-size:10px;
+}
+
+.bold {
+  font-weight:bold;
+}
+
+li {
+  margin: 25px;
+}
+
+.horizontal-line {
+    border:1px solid gray;
+    background-color:#cc0000;
+    margin:15px 0px 15px 0px;
+    padding: 0px 30px 0px 10px
+}
+
+/*
+What is important to know when linking an external file (like a stylesheet) to an HTML file?
+It's important to keep track of the file to make sure it's in a specific folder where all the stylesheets are kept, as opposed to storing files where the html page is located. Also, remember to include the type and rel in addition to the href link.
+What tricks did you use to help you with positioning? How hard was it to get the site as you wanted it?
+Positioning wasn't too difficult because everything was text based and laidout in a very linear format from top to bottom. The only minor positioning we had to do was center some of the text and image, and establish a table for the two rows of links.
+
+What CSS did you use to modify the element style (like size, color, etc.)
+Size, alignment, and display:block for the line breaks.
+
+Did you modify the HTML to include classes or ids? If so, which did you choose and why? If you didn't, how would you know which one to add to your HTML?
+Yes we used both. We used classes when it was something that was going to be repeatedly used, such as the horizontal line, and also enlarging specific text. Id was used for one-off styling, such as the copyright and geico ad styling.
+
+When you compared your site to the actual code base, which do you think had cleaner code that followed best practices and why?
+Berkshire site uses very little CSS, and as a result, is really long and convoluted. There is repetitive styling code, in addition to a lot of code I'm not familiar with, such as dl and dt. There is also alot of tables, and that made the html code very difficult to navigate.
+*/
