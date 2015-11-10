@@ -13,3 +13,5 @@ p ((10 * 365) + 2) * 24 * 60 #returns and displays the number of minutes in a de
 
 ####Defining Variables Challenge:
 https://github.com/supermikol/phase-0/blob/master/week-4/defining-variables.rb
+####Simple String Challenge:
+https://github.com/supermikol/phase-0/blob/numbers/week-4/simple-string.rb
