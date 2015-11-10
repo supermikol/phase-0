@@ -10,3 +10,6 @@ The explanation for this is that integers are much more manageable in the progra
 p 365 * 24 #returns and displays the number of hours in a year ==>8760
 p ((10 * 365) + 2) * 24 * 60 #returns and displays the number of minutes in a decade, including two leap days. ==>5258880
 ```
+
+####Defining Variables Challenge:
+https://github.com/supermikol/phase-0/blob/master/week-4/defining-variables.rb
