@@ -1,0 +1,36 @@
+body {
+    font-family:Tahoma;
+}
+
+header {
+    padding:40px;
+}
+
+header p {
+    padding-right:30px;
+}
+
+a:hover {
+    color:gray;
+    font-size:2em;
+    font-weight:bold;
+}
+
+.column-1 {
+    width:47%;
+    padding-left:3%;
+    display:inline-block;
+}
+
+.column-2 {
+    width:47%;
+    padding:auto 1.5%;
+    display:inline-block;
+    vertical-align:top;
+}
+
+footer {
+    clear:both;
+    width:100%;
+    padding: 3%;
+}
