@@ -1,22 +1,23 @@
 # Calculate a Grade
 
-# I worked on this challenge [by myself, with: ].
+# I worked on this challenge with: Calvin Lang
 
 
 # Your Solution Below
 
 def get_grade(grade)
-  if (grade >= 90)
-    return 'A'
-  elsif (grade >= 80)
-    return 'B'
-  elsif (grade >= 70)
-    return 'C'
-  elsif (grade >= 60)
-    return 'D'
-  else
-    return 'F'
-  end
+  case grade
+    when 90..100
+      return 'A'
+    when 80..89
+      return 'B'
+    when 70..79
+      return 'C'
+    when 60..69
+      return 'D'
+    else
+      return 'F'
+    end
 end
 
-puts get_grade(78)
+puts get_grade(98)
