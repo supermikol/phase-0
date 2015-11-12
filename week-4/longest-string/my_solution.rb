@@ -1,6 +1,6 @@
 # Longest String
 
-# I worked on this challenge [by myself, with: ].
+# I worked on this challenge by myself.
 
 # longest_string is a method that takes an array of strings as its input
 # and returns the longest string
@@ -12,6 +12,19 @@
 
 
 # Your Solution Below
+
+def compare_max(x,y)
+  if x.length > y.length
+    return x
+  else
+    return y
+  end
+end
+
 def longest_string(list_of_words)
-  # Your code goes here!
+  long = list_of_words[0]
+    for i in 1..(list_of_words.length-1)
+      long = compare_max(long, list_of_words[i])
+    end
+  return long
 end

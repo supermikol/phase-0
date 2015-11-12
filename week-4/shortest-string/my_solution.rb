@@ -1,6 +1,6 @@
 # Shortest String
 
-# I worked on this challenge [by myself, with: ].
+# I worked on this challenge by myself.
 
 # shortest_string is a method that takes an array of strings as its input
 # and returns the shortest string
@@ -11,6 +11,18 @@
 # If +list_of_words+ is empty the method should return nil
 
 #Your Solution Below
+def compare_min(x,y)
+  if x.length < y.length
+    return x
+  else
+    return y
+  end
+end
+
 def shortest_string(list_of_words)
-  # Your code goes here!
+  short = list_of_words[0]
+    for i in 1..(list_of_words.length-1)
+      short = compare_min(short, list_of_words[i])
+    end
+  return short
 end
