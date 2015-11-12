@@ -1,16 +1,20 @@
 # Define a Hash
 
-# I worked on this challenge [by myself, with: ].
+# I worked on this challenge by myself.
 
 
 # Your Solution Below
 
 # my_info is empty to start.  Edit this!
-my_info = {}
+my_info = { :first_name => "Michael",
+            :last_name  => "Du",
+            :hometown   => "San Francisco",
+            :age        => 28 }
 
-
-
-
+my_info[:first_name]
+my_info[:last_name]
+my_info[:hometown]
+my_info[:age]
 
 # RSpec Tests. They are included in this file because the local variables you are creating are not accessible across files. If we try to run these files as a separate file per normal operation, the local variable checks will return nil.
 
