@@ -49,9 +49,13 @@ p mode(["who", "what", "where", "who"]) # => ["who"]
 # 4. Reflection
 =begin
 Which data structure did you and your pair decide to implement and why?
+We decided to use a Hash to store the values because it made sense to store the value of the count along with each key.
 Were you more successful breaking this problem down into implementable pseudocode than the last with a pair?
+Yes, our initial code actually followed our pseudocode very closely, and it worked.
 What issues/successes did you run into when translating your pseudocode to code?
+None.
 What methods did you use to iterate through the content? Did you find any good ones when you were refactoring? Were they difficult to implement?
+Initially we used a combination of each and select to itereate through the elements. In refactoring, we simplified the code without really using any new method besides #values.
 =end
 
 
