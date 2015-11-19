@@ -31,6 +31,13 @@ def separate_comma(num)
 end
 
 # 2. Refactored Solution
+def separate_comma(num)
+  numarray = num.to_s.chars.to_a
+  for i in 1..(numarray.length-1)/3
+    numarray.insert(-(i*4), ',')
+  end
+  return numarray.join
+end
 
 # 3. Reflection
 #What was your process for breaking the problem down? What different approaches did you consider?
@@ -42,4 +49,4 @@ end
 #How did you initially iterate through the data structure?
 #By combining  a 'for' loop with an if statement (which came in handy for the commas)
 #Do you feel your refactored solution is more readable than your initial solution? Why?
-#I don't have a refactored solution.. :-(
+#I think so. It's directly inserting commas into the array, so it's saving a step.
