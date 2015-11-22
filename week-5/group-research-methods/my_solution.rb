@@ -7,7 +7,7 @@ my_family_pets_ages = {"Evi" => 6, "Ditto" => 3, "Hoobie" => 3, "George" => 12, 
 
 # Person 1's solution [by Michael Du]
 def my_array_finding_method(source, thing_to_find)
-  source.reject {|element| element unless element.to_s.include? thing_to_find}
+  source.select {|element| element.to_s.include? thing_to_find}
 end
 
 def my_hash_finding_method(source, thing_to_find)
@@ -36,7 +36,7 @@ def my_array_modification_method!(source, thing_to_modify)
 end
 
 def my_hash_modification_method!(source, thing_to_modify)
-  source.update(source){|key,value| value+2}
+  source.update(source){|key,value| value + thing_to_modify}
   return source
 end
 
