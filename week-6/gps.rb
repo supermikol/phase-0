@@ -1,42 +1,45 @@
 # Your Names
-# 1)
-# 2)
+# 1)Dana Breen
+# 2)Michael Du
 
-# We spent [#] hours on this challenge.
+# We spent [2] hours on this challenge.
 
 # Bakery Serving Size portion calculator.
 
 def serving_size_calc(item_to_make, order_quantity)
   library = {"cookie" => 1, "cake" =>  5, "pie" => 7}
-  error_counter = 3
 
-  library.each do |food|
-    if library[food] != library[item_to_make]
-      p error_counter += -1
-    end
-  end
+  raise ArgumentError.new("#{item_to_make} is not a valid input") unless library.has_key?(item_to_make)
 
-  if error_counter > 0
-    raise ArgumentError.new("#{item_to_make} is not a valid input")
-  end
-
-  serving_size = library.values_at(item_to_make)[0]
+  serving_size = library[item_to_make]
   serving_size_mod = order_quantity % serving_size
 
-  case serving_size_mod
-  when 0
-    return "Calculations complete: Make #{order_quantity/serving_size} of #{item_to_make}"
-  else
-    return "Calculations complete: Make #{order_quantity/serving_size} of #{item_to_make}, you have #{serving_size_mod} leftover ingredients. Suggested baking items: TODO: MAKE THIS FEATURE"
+  puts "Calculations complete: Make #{order_quantity/serving_size} #{item_to_make}. "
+
+  if serving_size_mod > 0
+    puts "You have #{serving_size_mod} leftover ingredients. Suggested baking items:"
+    reversed_library = Hash[library.to_a.reverse]
+    reversed_library.each do |item, q|
+      puts "#{serving_size_mod/q} #{item}" if serving_size_mod >= q
+      serving_size_mod = serving_size_mod % q
+    end
   end
 end
 
-p serving_size_calc("pie", 7)
-p serving_size_calc("pie", 8)
-p serving_size_calc("cake", 5)
-p serving_size_calc("cake", 7)
-p serving_size_calc("cookie", 1)
-p serving_size_calc("cookie", 10)
-p serving_size_calc("THIS IS AN ERROR", 5)
+serving_size_calc("pie", 48)
+serving_size_calc("pie", 8)
+serving_size_calc("cake", 5)
+serving_size_calc("cake", 7)
+serving_size_calc("cookie", 1)
+serving_size_calc("cookie", 10)
+
 
 #  Reflection
+What did you learn about making code readable by working on this challenge?
+I learned that a big part of the challenge is making sense of the original code. The programming part is the easy part, because it's not much different from creating a new program from scratch.
+Did you learn any new methods? What did you learn about them?
+Didn't use any new methods for this challenge.
+What did you learn about accessing data in hashes?
+That some people (coder of the original code) can have no idea what they're doing when accessing codes..it certainly took us some time to figure out that what the person was doing was nonsensical.
+What concepts were solidified when working through this challenge?
+Manipulating and accesssing values in a hash.
