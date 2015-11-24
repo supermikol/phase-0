@@ -35,11 +35,11 @@ serving_size_calc("cookie", 10)
 
 
 #  Reflection
-What did you learn about making code readable by working on this challenge?
-I learned that a big part of the challenge is making sense of the original code. The programming part is the easy part, because it's not much different from creating a new program from scratch.
-Did you learn any new methods? What did you learn about them?
-Didn't use any new methods for this challenge.
-What did you learn about accessing data in hashes?
-That some people (coder of the original code) can have no idea what they're doing when accessing codes..it certainly took us some time to figure out that what the person was doing was nonsensical.
-What concepts were solidified when working through this challenge?
-Manipulating and accesssing values in a hash.
+# What did you learn about making code readable by working on this challenge?
+# I learned that a big part of the challenge is making sense of the original code. The programming part is the easy part, because it's not much different from creating a new program from scratch.
+# Did you learn any new methods? What did you learn about them?
+# Didn't use any new methods for this challenge.
+# What did you learn about accessing data in hashes?
+# That some people (coder of the original code) can have no idea what they're doing when accessing codes..it certainly took us some time to figure out that what the person was doing was nonsensical.
+# What concepts were solidified when working through this challenge?
+# Manipulating and accesssing values in a hash.
