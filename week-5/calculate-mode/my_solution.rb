@@ -35,9 +35,8 @@ end
 # 3. Refactored Solution
 def mode(array)
   new_hash = Hash.new
-  array.uniq.each {|x| new_hash[x] = array.count(x)}
-  hash2 = new_hash.select {|key, value| value == new_hash.values.max}
-  return hash2.keys
+  array.each {|x| new_hash[x] = array.count(x)}
+  new_hash.select {|key, value| value == new_hash.values.max}.keys
 end
 
 p mode([1,2,3,3])         # => [3]
