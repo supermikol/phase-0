@@ -34,24 +34,47 @@
 # Initial Solution
 
 #OPTIONAL CHALLENGE: method that generates a nested array according to the rules B = 1-15, I = 16-30, N = 31-45, G = 46-60, O = 61-75
-def create_board
-  new_board = Array.new(5) {[rand(1..15), rand(16..30), rand(31..45), rand(46..60), rand(61..75)]}
-  new_board[2][2] = " "
-  return new_board
-end
-
-#draws random letter/number combination according to the rules B = 1-15, I = 16-30, N = 31-45, G = 46-60, O = 61-75
-def call
-  bingo = ["B", "I", "N", "G", "O"]
-  rand_num = rand(0..4)
-  p bingo[rand_num] + ((rand_num*15) + rand(1..15)).to_s
-end
 
 class BingoBoard
   def initialize(board = [])
-    @bingo_board = board.empty? ? create_board : board
+    @bingo_board = board.empty? ? self.create_board : board
+    @draws = 0
+    @collection = (1..75).to_a.shuffle!.map do |x|
+      if x < 16
+        "B" + x.to_s
+      elsif x < 31
+        "I" + x.to_s
+      elsif x < 46
+        "N" + x.to_s
+      elsif x < 61
+        "G" + x.to_s
+      else
+        "O" + x.to_s
+      end
+    end
   end
 
+  #no duplicate values!
+  def create_board
+    b = (1..15).to_a.shuffle!
+    i = (16..30).to_a.shuffle!
+    n = (31..45).to_a.shuffle!
+    g = (46..60).to_a.shuffle!
+    o = (61..75).to_a.shuffle!
+    new_board = Array.new(5) {[b.pop, i.pop, n.pop, g.pop, o.pop]}
+    new_board[2][2] = " "
+    return new_board
+  end
+
+  #Draws a new value, and then #check it
+  def call
+    @draws += 1
+    draw = @collection.pop
+    p "You drew #{draw}"
+    check(draw)
+  end
+
+  #Checks board and crosses out X if match, then reprint board
   def check(string)
     case string[0]
     when "B"
@@ -68,6 +91,7 @@ class BingoBoard
     @bingo_board.each do |x|
       x[col] = 'X' if x[col].to_s == string[1..2]
     end
+    self.board
   end
 
   #Prints the column of values
@@ -75,6 +99,7 @@ class BingoBoard
     @bingo_board.each {|x| puts x[col]}
   end
 
+  #Prints board
   def board
     puts "   B    I    N   G    O   "
     @bingo_board.each do |x|
@@ -84,9 +109,38 @@ class BingoBoard
       puts "---------------------------"
     end
   end
-end
 
-# Refactored Solution
+  #Check for victory conditions
+  def victory?
+    #Check columns & rows
+    @bingo_board.each do |row|
+      return true if row.none? {|cell| cell.is_a?(Integer)}
+    end
+    bingo_transpose = @bingo_board.transpose
+    bingo_transpose.each do |row|
+      return true if row.none? {|cell| cell.is_a?(Integer)}
+    end
+    #Check diagonals
+    bingo_reverse = @bingo_board.reverse
+    diag1 = []
+    diag2 = []
+    for i in 0..4
+      diag1 << @bingo_board[i][i]
+      diag2 << bingo_reverse[i][i]
+    end
+    return true if diag1.none? {|x| x.is_a?(Integer)} || diag2.none? {|x| x.is_a?(Integer)}
+    false
+  end
+
+  #Draws until win
+  def draw_until_win
+    until victory?
+      call
+    end
+    puts "You required #{@draws} draws to win!"
+  end
+
+end
 
 #DRIVER CODE (I.E. METHOD CALLS) GO BELOW THIS LINE
 board = [[47, 44, 71, 8, 88],
@@ -96,10 +150,11 @@ board = [[47, 44, 71, 8, 88],
         [75, 70, 54, 80, 83]]
 
 #Creates random board using rules given by Optional. THe numbers generated also follow those rules accordingly, rendering the old board useless.
+
 new_game2 = BingoBoard.new #Generates new random board
 new_game2.board #Prints board
-new_game2.check(call) # checks if letter/number combination from argument (a method) matches any of the values on the board
-new_game2.board
+new_game2.call #draws one ball
+new_game2.draw_until_win #draws until win
 
 #Reflection
 # How difficult was pseudocoding this challenge? What do you think of your pseudocoding style?
