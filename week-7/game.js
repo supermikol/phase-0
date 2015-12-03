@@ -1,4 +1,4 @@
- // Design Basic Game Solo Challenge
+// Design Basic Game Solo Challenge
 
 // This is a solo challenge
 
@@ -88,14 +88,12 @@ squirrel.move('right');
 console.log(squirrel)
 // Refactored Code
 
-
-
-
+ //Check out my HTML version! http://supermikol.github.io/squirrel.html
 
 
 // Reflection
 //What was the most difficult part of this challenge?
-// Planning everything out so that all those variables are being manipulated and the conditions are being checked when a single function is called.
+// One difficulty was planning everything out so that all those variables are being manipulated and the conditions are being checked when a single function is called. However, the hardest part was figuring out how to get everything to work on HTML.
 // // What did you learn about creating objects and functions that interact with one another?
 // I learned that as long as I keep good track of my variables, it's quite easy for variables to interact with one another, even if a function is embedded within one object and not another.
 // // Did you learn about any new built-in methods you could use in your refactored solution? If so, what were they and how do they work?
