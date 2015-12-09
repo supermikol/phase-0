@@ -1,12 +1,12 @@
 ###One to one
-![One to one](https://github.com/supermikol/phase-0/tree/master/week-8/imgs/one-to-one.png "One to one")
+![One to one](https://github.com/supermikol/phase-0/blob/master/week-8/imgs/one-to-one.png "One to one")
 This relationship is a one-to-one relationship because there is only one meal associated with one lunch id, and only one lunch id is associated per each meal id.
 
 ###Many to many
-![Many to many](https://github.com/supermikol/phase-0/tree/master/week-8/imgs/many-to-many.png "Many to many")
+![Many to many](https://github.com/supermikol/phase-0/blob/master/week-8/imgs/many-to-many.png "Many to many")
 
 ###Grocery List
-![Grocery list](https://github.com/supermikol/phase-0/tree/master/week-8/imgs/grocery-list.png "Grocery list")
+![Grocery list](https://github.com/supermikol/phase-0/blob/master/week-8/imgs/grocery-list.png "Grocery list")
 
 ###What is a one-to-one database?
 A one-to-one database is where two tables contains unique ids that only cross reference each other exactly one. For example, if we have a table of countries and capitals, each capital belongs to one country, and each country can only have one capital.
