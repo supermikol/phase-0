@@ -1,7 +1,7 @@
 // Tally Votes in JavaScript Pairing Challenge.
 
-// I worked on this challenge with:
-// This challenge took me [#] hours.
+// I worked on this challenge with: Matthew Oppenheimer
+// This challenge took me 2 hours.
 
 // These are the votes cast by each student. Do not alter these objects here.
 var votes = {
@@ -41,22 +41,6 @@ var voteCount = {
   treasurer: {}
 }
 
-/* The name of each student receiving a vote for an office should become a property
-of the respective office in voteCount.  After Alex's votes have been tallied,
-voteCount would be ...
-
-  var voteCount = {
-    president: { Bob: 1 },
-    vicePresident: { Devin: 1 },
-    secretary: { Gail: 1 },
-    treasurer: { Kerry: 1 }
-  }
-
-*/
-
-
-/* Once the votes have been tallied, assign each officer position the name of the
-student who received the most votes. */
 var officers = {
   president: undefined,
   vicePresident: undefined,
@@ -65,33 +49,45 @@ var officers = {
 }
 
 // Pseudocode
+//Need to create a function that will count the number of votes Bob received for president and update voteCount with it.
 
-
-// __________________________________________
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values __________________________________________
 // Initial Solution
-
-
-
-
-
-
-
+// To hell with the old code..It was just too ghastly to look at.
 // __________________________________________
 // Refactored Solution
+for (var officer in officers){
+  for (var i in votes) {
+    if (isNaN(voteCount[officer][votes[i][officer]])){
+      voteCount[officer][votes[i][officer]] = 1;
+    }
+    else {
+    voteCount[officer][votes[i][officer]] += 1;
+    };
+  }
+}
 
+for (var officer in officers){
+  var max_count = 0;
+  for (var a in voteCount[officer]){
+    if (voteCount[officer][a] > max_count) {
+      officers[officer] = a;
+      max_count = voteCount[officer][a];
+    };
+  };
+};
 
-
-
+console.log(officers);
 
 
 // __________________________________________
 // Reflection
-
-
-
-
-
-
+// What did you learn about iterating over nested objects in JavaScript?
+// That in order to write a few simple lines of code, sometimes you have to start with many many lines of complicated code. Haha. But once you get the hang of it, it makes a lot of sense intuitively.
+// Were you able to find useful methods to help you with this?
+// Yes. isNaN helped us to deal with candidates that hadn't been 'initiated' in voteCount.
+// What concepts were solidified in the process of working through this challenge?
+// Accessing the property names in objects was a struggle, but now I think we've got it figured out using the appropriate 'for' loops.
 // __________________________________________
 // Test Code:  Do not alter code below this line.
 

@@ -58,7 +58,7 @@ var scores = [ [80, 70, 70, 100],
 
 var gradebook = {};
 
-for (var i = 0; i < students.length; i++) {
+for (var i in students) {
   gradebook[students[i]] = {};
   gradebook[students[i]]["testScores"] = scores[i];
 };
