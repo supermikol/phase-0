@@ -1,15 +1,11 @@
 /*
 Gradebook from Names and Scores
-
 I worked on this challenge [by myself, with:]
 This challenge took me [#] hours.
-
 You will work with the following two variables.  The first, students, holds the names of four students.
 The second, scores, holds groups of test scores.  The relative positions of elements within the two
 variables match (i.e., 'Joseph' is the first element in students; his scores are the first value in scores.).
-
 Do not alter the students and scores code.
-
 */
 
 var students = ["Joseph", "Susan", "William", "Elizabeth"]
@@ -21,39 +17,76 @@ var scores = [ [80, 70, 70, 100],
 
 
 
-
-
-
 // __________________________________________
 // Write your code below.
+// var gradebook = {
+//   "Joseph": {},
+//   "Susan": {},
+//   "William": {},
+//   "Elizabeth": {}
+// };
 
+// gradebook["Joseph"]["testScores"] = scores[0];
+// gradebook["Susan"]["testScores"] = scores[1];
+// gradebook["William"]["testScores"] = scores[2];
+// gradebook["Elizabeth"]["testScores"] = scores[3];
 
+// gradebook["addScore"] = function(name, score) {
+//   gradebook[name]["testScores"].push(score);
+// };
 
+// gradebook["getAverage"] = function(name) {
+//   return average(gradebook[name]["testScores"]);
+// };
 
+// var average = function(array) {
+//   var counter = 0;
 
+//   var answer = 0;
 
+//   while (counter < array.length) {
+//     answer += array[counter];
+//     counter++;
+//   };
+
+//   return (answer / array.length);
+// };
 
 
 // __________________________________________
 // Refactored Solution
 
+var gradebook = {};
 
+for (var i = 0; i < students.length; i++) {
+  gradebook[students[i]] = {};
+  gradebook[students[i]]["testScores"] = scores[i];
+};
 
+gradebook["addScore"] = function(name, score) {
+  gradebook[name]["testScores"].push(score);
+};
 
+gradebook["getAverage"] = function(name) {
+  return average(gradebook[name]["testScores"]);
+};
 
-
-
+var average = function(array) {
+  var result = 0;
+  for (var counter = 0; counter < array.length; counter++) {
+    result += array[counter];
+  };
+  return (result / array.length);
+};
 
 // __________________________________________
 // Reflect
-
-
-
-
-
-
-
-
+// What did you learn about adding functions to objects?
+// This was more of a refresher for us, and we didn't run into any trouble adding functions, so there wasn't much that we really learned.
+// How did you iterate over nested arrays in JavaScript?
+// First was using a while loop, and then in the refactor we changed it to a for loop with a counter.
+// Were there any new methods you were able to incorporate? If so, what were they and how did they work?
+// No we didn't use any new methods.
 
 // __________________________________________
 // Test Code:  Do not alter code below this line.
@@ -67,8 +100,6 @@ function assert(test, message, test_number) {
   console.log(test_number + "true");
   return true;
 }
-
-
 
 assert(
   (gradebook instanceof Object),
