@@ -18,7 +18,7 @@
 
 # 1. Initial Solution
 def separate_comma(num)
-  numarray = num.to_s.chars.to_a
+  numarray = num.to_s.chars
   finarray = Array.new
   for i in 0..numarray.length-1
     if i % 3 == 0 && i > 0
@@ -32,7 +32,7 @@ end
 
 # 2. Refactored Solution
 def separate_comma(num)
-  numarray = num.to_s.chars.to_a
+  numarray = num.to_s.chars
   for i in 1..(numarray.length-1)/3
     numarray.insert(-(i*4), ',')
   end
